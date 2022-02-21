@@ -24,6 +24,9 @@ export const GlobalStyles = createGlobalStyle`
   }
   button {
     font-family: ${(props) => props.theme.fonts.main};
+    background: transparent;
+    border: none;
+    cursor: pointer;
   }
   a {
     text-decoration: none;
