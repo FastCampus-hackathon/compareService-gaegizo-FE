@@ -8,6 +8,7 @@ import ScarpNav from './scrap/ScarpNav';
 import ScrapFilter from './scrap/ScrapFilter';
 import ScrapList from './scrap/ScrapList';
 import ComparePage from './ComparePage/ComparePage';
+import CompareSotrage from './CompareStorage/CompareSotrage';
 
 const App = () => {
   const [show, setShow] = useState(false);
@@ -31,7 +32,8 @@ const App = () => {
             <ScrapList onAddCompare={handleCompareList} />
           </div>
         )}
-        {!show && <ComparePage />}
+        {/* {!show && <ComparePage />} */}
+        {!show && <CompareSotrage />}
       </div>
     </ThemeProvider>
   );

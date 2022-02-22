@@ -57,7 +57,7 @@ const Text = styled.p`
 const CountBox = styled.div`
   width: 46px;
   height: 28px;
-  line-height: 31px;
+  line-height: 28px;
   font-size: 20px;
   font-weight: 700;
   border-radius: 40px;
