@@ -9,15 +9,17 @@ import ScrapFilter from './scrap/ScrapFilter';
 
 const App = () => {
   const [show, setShow] = useState(false);
-  
+
   return (
     <ThemeProvider theme={themeDefault}>
       <GlobalStyles {...themeDefault} />
       <div style={{display: 'flex'}}>
         <LeftGNB show={show} setShow={setShow} />
-        <CardList />
-        <ScarpNav />
-        <ScrapFilter />
+        <div style={{margin: '0 auto'}}>
+          <CardList />
+          <ScarpNav />
+          <ScrapFilter />
+        </div>
       </div>
     </ThemeProvider>
   );
