@@ -69,6 +69,8 @@ const TextArea = styled.textarea`
   -webkit-box-shadow: inset 0 0 5px #4876ef;
   -moz-box-shadow: inset 0 0 5px #4876ef;
 
+  -moz-appearance: none;
+  outline: 0px none transparent;
   &::placeholder {
     color: #96a0b5;
   }
