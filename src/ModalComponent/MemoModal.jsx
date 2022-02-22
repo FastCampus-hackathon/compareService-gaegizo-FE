@@ -9,16 +9,6 @@ const MemoModal = ({setChangeModal}) => {
     setInputText(e.target.value);
   };
 
-  const handleSaveMemo = () => {
-    setChangeModal(false);
-    // await axios.post('http://3.37.36.163:8080/api/memo', {
-    //   userId: 1,
-    //   JobCompareBoxId: 1,
-    //   Content: inputText,
-    // });
-    // setChangeModal(false);
-  };
-
   return (
     <MemoContainer>
       <Title>메모</Title>
@@ -75,9 +65,7 @@ const TextArea = styled.textarea`
   border: 1px solid #d7dce5;
   resize: none;
   margin-bottom: 24px;
-  box-shadow: inset 1px 1px 1px 1px #4876ef;
-  -webkit-box-shadow: inset 1px 1px 1px 1px #4876ef;
-  -moz-box-shadow: inset 1px 1px 1px 1px #4876ef;
+
   &::placeholder {
     color: #96a0b5;
   }
