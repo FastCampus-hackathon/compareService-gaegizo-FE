@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import CompareHeader from './CompareHeader';
 import CompareItem from './CompareItem';
+import EmptyItem from './EmptyItem';
 
 const CompareBox = () => {
   return (
@@ -8,7 +9,7 @@ const CompareBox = () => {
       <CompareHeader />
       <CompareItem />
       <CompareItem />
-      <CompareItem />
+      <EmptyItem />
     </Box>
   );
 };
