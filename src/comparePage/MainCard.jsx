@@ -61,15 +61,15 @@ const HitBox = styled.div`
 `;
 
 const Star = styled.img`
-  height: 24px;
-  width: 24px;
+  height: 18px;
+  width: 18px;
   padding-top: 2px;
   margin-right: 2px;
 `;
 
 const Eye = styled.img`
-  height: 24px;
-  width: 24px;
+  height: 20px;
+  width: 20px;
   padding-top: 2px;
   margin-right: 2px;
   margin-left: 14px;
