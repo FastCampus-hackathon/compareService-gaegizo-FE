@@ -4,8 +4,9 @@ import axios from 'axios';
 import ComparePage from '../ComparePage/ComparePage';
 import CardItem from './CardItem';
 import DefaultCard from './DefaultCard';
+import ScarpNav from '../scrap/ScarpNav';
 
-const CardList = ({list, setIsCompare, setCompareList}) => {
+const CardList = ({list, setIsCompare, setCompareList, setIsStorage}) => {
   const handleCompare = async () => {
     const data = await axios.get(
       'http://3.37.36.163:8080/api/compare?jobNumber1=42320380&jobNumber2=42377191&jobNumber3=42349073',
@@ -16,7 +17,7 @@ const CardList = ({list, setIsCompare, setCompareList}) => {
   return (
     <ListContainer>
       <Title>스크랩/관심기업</Title>
-      <SubTitle>김바쁨님, 스크랩한 공고들을 한눈에 비교해보세요!</SubTitle>
+      <ScarpNav setIsStorage={setIsStorage} />
       <CardLists>
         {list
           .slice(0, 3)
@@ -74,7 +75,7 @@ const CompareButton = styled.button`
   font-weight: 700;
   border-radius: 12px;
   margin-bottom: 12px;
-  background-color: #3157dd;
+  background-color: #4876ef;
   color: white;
 `;
 

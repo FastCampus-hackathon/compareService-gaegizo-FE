@@ -19,7 +19,7 @@ const ScarpNav = ({setIsStorage}) => {
       <NavList>
         <NavItem onClick={() => setIsStorage(true)}>
           <Text>저장된 비교함</Text>
-          <CountBox>20</CountBox>
+          <CountBox>3</CountBox>
         </NavItem>
       </NavList>
     </NavContainer>

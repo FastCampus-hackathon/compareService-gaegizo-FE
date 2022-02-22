@@ -42,8 +42,8 @@ const App = () => {
                   list={compareList}
                   setIsCompare={setIsCompare}
                   setCompareList={setCompareList}
+                  setIsStorage={setIsStorage}
                 />
-                <ScarpNav setIsStorage={setIsStorage} />
                 <ScrapFilter />
                 <ScrapList onAddCompare={handleCompareList} />
               </>

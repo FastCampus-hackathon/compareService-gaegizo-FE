@@ -9,13 +9,14 @@ const MemoModal = ({setChangeModal}) => {
     setInputText(e.target.value);
   };
 
-  const handleSaveMemo = async () => {
-    await axios.post('http://3.37.36.163:8080/api/memo', {
-      userId: 1,
-      JobCompareBoxId: 1,
-      Content: inputText,
-    });
+  const handleSaveMemo = () => {
     setChangeModal(false);
+    // await axios.post('http://3.37.36.163:8080/api/memo', {
+    //   userId: 1,
+    //   JobCompareBoxId: 1,
+    //   Content: inputText,
+    // });
+    // setChangeModal(false);
   };
 
   return (
