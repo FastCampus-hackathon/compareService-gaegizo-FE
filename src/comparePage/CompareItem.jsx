@@ -44,8 +44,6 @@ const CompareItem = () => {
           style={{paddingLeft: '20px'}}
         />
       </Row>
-      <Row h={72}>순위비교</Row>
-      <Row h={464}>지원자 통계</Row>
       <Row h={72}>
         <CompareRanking />
       </Row>

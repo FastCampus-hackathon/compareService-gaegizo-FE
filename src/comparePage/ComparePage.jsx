@@ -1,11 +1,12 @@
 import {useState} from 'react';
 import styled from 'styled-components';
-import ChangeModal from '../ModalComponent/ChangeModal';
+import MemoModal from '../ModalComponent/MemoModal';
 import ModalContainer from '../ModalComponent/ModalContainer';
 import CompareBox from './CompareBox';
 
 const ComparePage = () => {
   const [changeModal, setChangeModal] = useState(false);
+
   return (
     <Container>
       <Title>공고 비교하기</Title>
@@ -20,7 +21,7 @@ const ComparePage = () => {
       <CompareBox />
       {changeModal && (
         <ModalContainer>
-          <ChangeModal setChangeModal={setChangeModal} />
+          <MemoModal setChangeModal={setChangeModal} />
         </ModalContainer>
       )}
     </Container>
