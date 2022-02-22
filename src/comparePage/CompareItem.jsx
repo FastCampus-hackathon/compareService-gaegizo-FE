@@ -4,6 +4,7 @@ import CompareRanking from './CompareRanking';
 import CompareWelfare from './CompareWelfare';
 import MainCard from './MainCard';
 import SalaryChart from './SalaryChart';
+import CompareRegion from './CompareRegion';
 
 const CompareItem = () => {
   return (
@@ -19,7 +20,9 @@ const CompareItem = () => {
         <Desc>UX/UI 디자인 직무에서 신입 평균 연봉이에요</Desc>
       </Row>
       <Row h={72}>업종</Row>
-      <Row h={102}>근무지역</Row>
+      <Row h={102}>
+        <CompareRegion />
+      </Row>
       <Row h={72}>근무형태</Row>
       <Row h={148}>
         <CompareWelfare />
@@ -44,8 +47,6 @@ const CompareItem = () => {
           style={{paddingLeft: '20px'}}
         />
       </Row>
-      <Row h={72}>순위비교</Row>
-      <Row h={464}>지원자 통계</Row>
       <Row h={72}>
         <CompareRanking />
       </Row>

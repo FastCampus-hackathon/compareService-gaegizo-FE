@@ -25,7 +25,7 @@ const App = () => {
         <LeftGNB show={show} setShow={setShow} />
         {show && (
           <div style={{margin: '0 auto'}}>
-            <CardList list={compareList} onRemove={handleRemoveList} />
+            <CardList list={compareList} />
             <ScarpNav />
             <ScrapFilter />
             <ScrapList onAddCompare={handleCompareList} />
