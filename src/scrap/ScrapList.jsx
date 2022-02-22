@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import axios from 'axios';
 import ScrapItem from './ScrapItem';
 
-const ScrapList = () => {
+const ScrapList = ({onAddCompare}) => {
   const [scrapList, setScrapList] = useState([]);
 
   const handleGetData = async () => {
@@ -18,7 +18,13 @@ const ScrapList = () => {
   return (
     <ListContainer>
       {scrapList &&
-        scrapList.map((list) => <ScrapItem key={list.jobNumber} list={list} />)}
+        scrapList.map((list) => (
+          <ScrapItem
+            key={list.jobNumber}
+            list={list}
+            onAddCompare={onAddCompare}
+          />
+        ))}
     </ListContainer>
   );
 };

@@ -1,7 +1,8 @@
 import {useState} from 'react';
 import styled from 'styled-components';
 
-const CardItem = () => {
+const CardItem = ({cardList}) => {
+  const {id, company, title, tag} = cardList;
   const [isShow, setIsShow] = useState(false);
 
   const handleShowButton = () => {
@@ -9,55 +10,26 @@ const CardItem = () => {
   };
 
   return (
-    <>
-      <CardItemContainer
-        onMouseEnter={handleShowButton}
-        onMouseLeave={handleShowButton}>
-        <Info>(주)개기조 컴퍼니</Info>
-        <Notice>공고명 한줄만 공고제목 한줄만 공고에요</Notice>
-        <TagList>
-          <Tag>#직무명</Tag>
-          <Tag>#지역명</Tag>
-        </TagList>
-        <BottomContainer>
-          <EndDay>~03/08</EndDay>
-          <ApplyButton>입사지원</ApplyButton>
-        </BottomContainer>
-        {isShow && (
-          <CloseButton>
-            <Image src="./scrap/closeButton.png" alt="close" />
-          </CloseButton>
-        )}
-      </CardItemContainer>
-      <DefaultCardContainer>
-        <Notice>
-          <Image src="./scrap/plus.png" alt="plus" plus />
-          <Text>비교하고 싶은 공고를 추가해 보세요</Text>
-        </Notice>
-        <TagList>
-          <Tag>더 많은 공고를 비교하고 싶다면?</Tag>
-        </TagList>
-        <BottomContainer>
-          <RecommendButton>추천공고보기</RecommendButton>
-        </BottomContainer>
-      </DefaultCardContainer>
-      <DefaultCardContainer>
-        <Notice>
-          <Image src="./scrap/plus.png" alt="plus" plus />
-          <Text>비교하고 싶은 공고를 추가해 보세요</Text>
-        </Notice>
-        <TagList>
-          <Tag>더 많은 공고를 비교하고 싶다면?</Tag>
-        </TagList>
-        <BottomContainer>
-          <RecommendButton>추천공고보기</RecommendButton>
-        </BottomContainer>
-      </DefaultCardContainer>
-      <CompareContainer>
-        <CompareButton>공고 비교하기</CompareButton>
-        <ResetButton>비교함 초기화</ResetButton>
-      </CompareContainer>
-    </>
+    <CardItemContainer
+      onMouseEnter={handleShowButton}
+      onMouseLeave={handleShowButton}>
+      <Info>{company}</Info>
+      <Notice>{title}</Notice>
+      <TagList>
+        {tag.map((tags, index) => (
+          <Tag key={index}>{`#${tags}`}</Tag>
+        ))}
+      </TagList>
+      <BottomContainer>
+        <EndDay>~03/08</EndDay>
+        <ApplyButton>입사지원</ApplyButton>
+      </BottomContainer>
+      {isShow && (
+        <CloseButton>
+          <Image src="./scrap/closeButton.png" alt="close" />
+        </CloseButton>
+      )}
+    </CardItemContainer>
   );
 };
 
@@ -80,11 +52,6 @@ const CardItemContainer = styled(Card)`
   background-color: #f0f5ff;
 `;
 
-const DefaultCardContainer = styled(Card)`
-  padding-top: 55px;
-  background-color: #f4f6fa;
-`;
-
 const Info = styled.p`
   height: 20px;
   line-height: 20px;
@@ -103,6 +70,7 @@ const Notice = styled.p`
   margin-bottom: 8px;
   color: #373f57;
   display: flex;
+  overflow: hidden;
 `;
 
 const TagList = styled.ul`
@@ -141,10 +109,6 @@ const Image = styled.img`
   ${(props) => props.plus && 'margin-right: 4px;'}
 `;
 
-const Text = styled.span`
-  height: 24px;
-`;
-
 const EndDay = styled.p`
   height: 20px;
   line-height: 28px;
@@ -167,34 +131,4 @@ const ApplyButton = styled(Button)`
   color: #4876ef;
 `;
 
-const RecommendButton = styled(Button)`
-  border: 1px solid #8491a7;
-  color: #5c667b;
-`;
-
-const CompareContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-`;
-
-const CompareButton = styled.button`
-  width: 204px;
-  height: 130px;
-  font-size: 24px;
-  font-weight: 700;
-  border-radius: 12px;
-  margin-bottom: 12px;
-  background-color: #3157dd;
-  color: white;
-`;
-
-const ResetButton = styled.button`
-  height: 48px;
-  line-height: 48px;
-  font-size: 18px;
-  font-weight: 700;
-  border-radius: 8px;
-  border: 1px solid #8491a7;
-  color: #5c667b;
-`;
 export default CardItem;

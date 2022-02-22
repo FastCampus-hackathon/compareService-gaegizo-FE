@@ -11,6 +11,12 @@ import ComparePage from './ComparePage/ComparePage';
 
 const App = () => {
   const [show, setShow] = useState(false);
+  const [compareList, setCompareList] = useState([]);
+
+  const handleCompareList = (list) => {
+    const {id, company, title, tag} = list;
+    setCompareList([{id, company, title, tag}, ...compareList]);
+  };
 
   return (
     <ThemeProvider theme={themeDefault}>
@@ -19,10 +25,10 @@ const App = () => {
         <LeftGNB show={show} setShow={setShow} />
         {show && (
           <div style={{margin: '0 auto'}}>
-            <CardList />
+            <CardList list={compareList} onRemove={handleRemoveList} />
             <ScarpNav />
             <ScrapFilter />
-            <ScrapList />
+            <ScrapList onAddCompare={handleCompareList} />
           </div>
         )}
         {!show && <ComparePage />}
