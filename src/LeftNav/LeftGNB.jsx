@@ -37,6 +37,7 @@ const BackBox = styled.div`
   width: ${({navToggle}) => (navToggle ? '72px' : '270px')};
   height: 200vh;
   transition: width 0.5s;
+  flex-shrink: 0;
 `;
 
 const LeftContainer = styled.div`
