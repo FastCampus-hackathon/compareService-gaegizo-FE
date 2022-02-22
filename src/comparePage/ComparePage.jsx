@@ -18,7 +18,7 @@ const ComparePage = () => {
         <CompareBtn>비교함 저장하기</CompareBtn>
       </ToolBar>
       <CompareBox />
-      {memoModal && (
+      {changeModal && (
         <ModalContainer>
           <ChangeModal setChangeModal={setChangeModal} />
         </ModalContainer>
