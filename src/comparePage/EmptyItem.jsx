@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import MainCard from './MainCard';
 
 const EmptyItem = () => {
   return (
