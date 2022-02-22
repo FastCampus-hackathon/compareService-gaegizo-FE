@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const NavMemu = ({navToggle, show, setShow}) => {
+const NavMemu = ({navToggle, show, setShow, setIsCompare}) => {
   return (
     <ul>
       <li>
@@ -23,7 +23,11 @@ const NavMemu = ({navToggle, show, setShow}) => {
           <Text navToggle={navToggle}>이력서</Text>
         </Items>
       </li>
-      <li onClick={() => setShow((curr) => !curr)}>
+      <li
+        onClick={() => {
+          setShow(true);
+          setIsCompare(false);
+        }}>
         <Items navToggle={navToggle} show={show}>
           {show ? (
             <Icon
