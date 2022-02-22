@@ -14,16 +14,10 @@ const App = () => {
   const [show, setShow] = useState(false);
   const [isCompare, setIsCompare] = useState(false);
   const [isStorage, setIsStorage] = useState(false);
-  const [compareList, setCompareList] = useState([]);
+  const [compareList, setCompareList] = useState([0, 0, 0]);
 
   const handleCompareList = (list) => {
     const {id, company, title, tag} = list;
-    console.log(list);
-    if (2 < compareList.length) {
-      alert('비교 항목은 최대 3개만 담을 수 있습니다.');
-      return;
-    }
-
     setCompareList([{id, company, title, tag}, ...compareList]);
   };
   useEffect(() => {
