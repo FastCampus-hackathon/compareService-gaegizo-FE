@@ -16,6 +16,7 @@ const CardList = () => {
 const ListContainer = styled.div`
   display: flex;
   flex-direction: column;
+  margin-bottom: 60px;
 `;
 
 const Text = styled.p`
