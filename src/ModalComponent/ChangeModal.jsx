@@ -1,7 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
+import axios from 'axios';
 
 const ChangeModal = ({setChangeModal}) => {
+  const handleCompare = async () => {
+    const data = await axios.get(
+      `http://3.37.36.163:8080/api/announcement/${jobNumber}`,
+    );
+    console.log(data);
+  };
+
   return (
     <Box>
       <Title>다른 공고 추가하기</Title>
@@ -23,7 +31,9 @@ const ChangeModal = ({setChangeModal}) => {
       </ListBox>
       <BtnBox>
         <Btn>취소</Btn>
-        <Btn primary>비교하기</Btn>
+        <Btn primary onClick={handleCompare}>
+          비교하기
+        </Btn>
       </BtnBox>
       <Close
         src="./scrap/closeButton.png"

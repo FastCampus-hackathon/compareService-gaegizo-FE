@@ -1,14 +1,28 @@
+import axios from 'axios';
 import React from 'react';
 import styled from 'styled-components';
 
 const SaveCompares = ({setSaveCompareModal}) => {
+  const handleSaveCompare = async () => {
+    const data = await axios.post('http://3.37.36.163:8080/api/compareBox', {
+      userId,
+      boxName,
+      jobNumber1,
+      jobNumber2,
+      jobNumber3,
+    });
+    console.log(data);
+  };
+
   return (
     <Box>
       <Title>비교함 저장하기</Title>
       <Input placeholder="나만의 비교함 이름을 정해주세요. ex) 신입 초봉 2800주는 기업, 관심기업" />
       <BtnBox>
         <Btn>취소</Btn>
-        <Btn primary>비교하기</Btn>
+        <Btn primary onClick={handleSaveCompare}>
+          저장
+        </Btn>
       </BtnBox>
       <Close
         src="./scrap/closeButton.png"

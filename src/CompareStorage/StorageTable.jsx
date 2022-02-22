@@ -1,11 +1,18 @@
+import axios from 'axios';
 import styled from 'styled-components';
 
 const StorageTable = () => {
+  const handleShowMemo = async () => {
+    // 메모 아이디가 주소 맨 끝에 들어감
+    const data = await axios.get('http://3.37.36.163:8080/api/memo/1');
+    console.log(data);
+  };
+
   return (
     <FlexBox>
       <StorageCard>
         <Title>이름없는 공고함!</Title>
-        <MemoBar>
+        <MemoBar onClick={handleShowMemo}>
           <Img src="./comparepageicons/memotip.png" alt="memo icon" />
           스크랩한 공고를 한눈에 비교하고, 중요한 관련 정보들을 메모해보세요.
           ex) 개기조 컴퍼니는 빨간버스로 한번에 감.

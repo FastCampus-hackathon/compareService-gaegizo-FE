@@ -1,18 +1,24 @@
 import {useState} from 'react';
 import styled from 'styled-components';
 import MemoModal from '../ModalComponent/MemoModal';
+import ChangeModal from '../ModalComponent/ChangeModal';
 import ModalContainer from '../ModalComponent/ModalContainer';
 import SaveCompares from '../ModalComponent/SaveCompares';
 import CompareBox from './CompareBox';
 
-const ComparePage = () => {
+const ComparePage = ({list}) => {
   const [changeModal, setChangeModal] = useState(false);
+  const [memoModal, setMemoModal] = useState(false);
   const [saveCompareModal, setSaveCompareModal] = useState(false);
+
+  // 비교한 데이터 가져옴
+  console.log(list);
+
   return (
     <Container>
       <Title>공고 비교하기</Title>
       <ToolBar>
-        <MemoBar>
+        <MemoBar onClick={() => setMemoModal(true)}>
           <Img src="./comparepageicons/memotip.png" alt="memo icon" />
           스크랩한 공고를 한눈에 비교하고, 중요한 관련 정보들을 메모해보세요.
           ex) 개기조 컴퍼니는 빨간버스로 한번에 감.
@@ -24,7 +30,12 @@ const ComparePage = () => {
       <CompareBox setChangeModal={setChangeModal} />
       {changeModal && (
         <ModalContainer>
-          <MemoModal setChangeModal={setChangeModal} />
+          <ChangeModal setChangeModal={setChangeModal} />
+        </ModalContainer>
+      )}
+      {memoModal && (
+        <ModalContainer>
+          <MemoModal setChangeModal={setMemoModal} />
         </ModalContainer>
       )}
       {saveCompareModal && (

@@ -7,18 +7,20 @@ import DefaultCard from './DefaultCard';
 
 const CardList = ({list}) => {
   const [current, setCurrent] = useState(false);
+  const [compareList, setCompareList] = useState([]);
   const [empty, setEmpty] = useState(['', '', '']);
 
   const handleCompare = async () => {
-    const data = await axios.get(
+    const {data} = await axios.get(
       'http://3.37.36.163:8080/api/compare?jobNumber1=42320380&jobNumber2=42377191&jobNumber3=42349073',
     );
-    console.log(data);
+    setCompareList(data);
     setCurrent((current) => !current);
   };
 
   return (
     <>
+      {current && <ComparePage list={compareList} />}
       <ListContainer>
         <Title>스크랩/관심기업</Title>
         <SubTitle>김바쁨님, 스크랩한 공고들을 한눈에 비교해보세요!</SubTitle>
@@ -34,7 +36,6 @@ const CardList = ({list}) => {
           </CompareContainer>
         </CardLists>
       </ListContainer>
-      {current && <ComparePage />}
     </>
   );
 };

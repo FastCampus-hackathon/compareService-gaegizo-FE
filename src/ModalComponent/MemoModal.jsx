@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React, {useState} from 'react';
 import styled from 'styled-components';
 
@@ -8,8 +9,12 @@ const MemoModal = ({setChangeModal}) => {
     setInputText(e.target.value);
   };
 
-  const handleSaveMemo = () => {
-    // 저장 로직 추가 예정
+  const handleSaveMemo = async () => {
+    await axios.post('http://3.37.36.163:8080/api/memo', {
+      userId: 1,
+      JobCompareBoxId: 1,
+      Content: inputText,
+    });
     setChangeModal(false);
   };
 
