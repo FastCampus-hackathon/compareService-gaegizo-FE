@@ -7,6 +7,8 @@ const ScrapList = ({onAddCompare}) => {
   const [scrapList, setScrapList] = useState([]);
 
   const handleGetData = async () => {
+    // const data = await axios.get('api/interestJob/list');
+    // console.log(data);
     const {data} = await axios.get('./data/scrapList.json');
     setScrapList(data.data);
   };
