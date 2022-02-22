@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 import GenderPieChart from './GenderPieChart';
+import CompareRanking from './CompareRanking';
+import CompareWelfare from './CompareWelfare';
 import MainCard from './MainCard';
 import SalaryChart from './SalaryChart';
 
@@ -19,7 +21,9 @@ const CompareItem = () => {
       <Row h={72}>업종</Row>
       <Row h={102}>근무지역</Row>
       <Row h={72}>근무형태</Row>
-      <Row h={148}>복리후생</Row>
+      <Row h={148}>
+        <CompareWelfare />
+      </Row>
       <Row h={102}>접수기간</Row>
       <Row h={72}>지원방법</Row>
       <Row h={102}>우대사항</Row>
@@ -41,6 +45,10 @@ const CompareItem = () => {
         />
       </Row>
       <Row h={72}>순위비교</Row>
+      <Row h={464}>지원자 통계</Row>
+      <Row h={72}>
+        <CompareRanking />
+      </Row>
     </Col>
   );
 };

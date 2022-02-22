@@ -1,13 +1,25 @@
+import {useState} from 'react';
 import styled from 'styled-components';
 import CardItem from './CardItem';
+import DefaultCard from './DefaultCard';
 
-const CardList = () => {
+const CardList = ({list}) => {
+  const [empty, setEmpty] = useState(['', '', '']);
+
+  const handleCompare = () => {};
+
   return (
     <ListContainer>
       <Title>스크랩/관심기업</Title>
       <SubTitle>김바쁨님, 스크랩한 공고들을 한눈에 비교해보세요!</SubTitle>
       <CardLists>
-        <CardItem />
+        {0 < list.length
+          ? list.map((item, index) => <CardItem cardList={item} key={index} />)
+          : empty.map((item, index) => <DefaultCard key={index} />)}
+        <CompareContainer>
+          <CompareButton onClick={handleCompare}>공고 비교하기</CompareButton>
+          <ResetButton>비교함 초기화</ResetButton>
+        </CompareContainer>
       </CardLists>
     </ListContainer>
   );
@@ -38,6 +50,33 @@ const SubTitle = styled(Text)`
 const CardLists = styled.ul`
   height: 190px;
   display: flex;
+`;
+
+const CompareContainer = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+`;
+
+const CompareButton = styled.button`
+  width: 204px;
+  height: 130px;
+  font-size: 24px;
+  font-weight: 700;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  background-color: #3157dd;
+  color: white;
+`;
+
+const ResetButton = styled.button`
+  height: 48px;
+  line-height: 48px;
+  font-size: 18px;
+  font-weight: 700;
+  border-radius: 8px;
+  border: 1px solid #8491a7;
+  color: #5c667b;
 `;
 
 export default CardList;
