@@ -1,13 +1,16 @@
+import {useState} from 'react';
 import styled from 'styled-components';
+import ChangeModal from '../ModalComponent/ChangeModal';
 import ModalContainer from '../ModalComponent/ModalContainer';
 import CompareBox from './CompareBox';
 
 const ComparePage = () => {
+  const [changeModal, setChangeModal] = useState(false);
   return (
     <Container>
       <Title>공고 비교하기</Title>
       <ToolBar>
-        <MemoBar>
+        <MemoBar onClick={() => setChangeModal(true)}>
           <Img src="./comparepageicons/memotip.png" alt="memo icon" />
           스크랩한 공고를 한눈에 비교하고, 중요한 관련 정보들을 메모해보세요.
           ex) 개기조 컴퍼니는 빨간버스로 한번에 감.
@@ -15,9 +18,11 @@ const ComparePage = () => {
         <CompareBtn>비교함 저장하기</CompareBtn>
       </ToolBar>
       <CompareBox />
-      <ModalContainer>
-        <div>sdfsf</div>
-      </ModalContainer>
+      {memoModal && (
+        <ModalContainer>
+          <ChangeModal setChangeModal={setChangeModal} />
+        </ModalContainer>
+      )}
     </Container>
   );
 };
