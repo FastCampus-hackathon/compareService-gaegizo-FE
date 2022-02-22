@@ -18,7 +18,7 @@ const App = () => {
 
   const handleCompareList = (list) => {
     const {id, company, title, tag} = list;
-
+    console.log(list);
     if (2 < compareList.length) {
       alert('비교 항목은 최대 3개만 담을 수 있습니다.');
       return;
