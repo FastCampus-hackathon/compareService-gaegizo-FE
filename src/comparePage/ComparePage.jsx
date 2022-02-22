@@ -2,10 +2,12 @@ import {useState} from 'react';
 import styled from 'styled-components';
 import ChangeModal from '../ModalComponent/ChangeModal';
 import ModalContainer from '../ModalComponent/ModalContainer';
+import SaveCompares from '../ModalComponent/SaveCompares';
 import CompareBox from './CompareBox';
 
 const ComparePage = () => {
   const [changeModal, setChangeModal] = useState(false);
+  const [saveCompareModal, setSaveCompareModal] = useState(false);
   return (
     <Container>
       <Title>공고 비교하기</Title>
@@ -15,12 +17,19 @@ const ComparePage = () => {
           스크랩한 공고를 한눈에 비교하고, 중요한 관련 정보들을 메모해보세요.
           ex) 개기조 컴퍼니는 빨간버스로 한번에 감.
         </MemoBar>
-        <CompareBtn>비교함 저장하기</CompareBtn>
+        <CompareBtn onClick={() => setSaveCompareModal(true)}>
+          비교함 저장하기
+        </CompareBtn>
       </ToolBar>
       <CompareBox setChangeModal={setChangeModal} />
       {changeModal && (
         <ModalContainer>
           <ChangeModal setChangeModal={setChangeModal} />
+        </ModalContainer>
+      )}
+      {saveCompareModal && (
+        <ModalContainer>
+          <SaveCompares setSaveCompareModal={setSaveCompareModal} />
         </ModalContainer>
       )}
     </Container>

@@ -10,6 +10,7 @@ const ChangeModal = ({setChangeModal}) => {
           <option>전체(30)</option>
         </InputSelect>
         <Input placeholder="키워드 입력" />
+        <Search src="./comparepageIcons/search.png" alt="search" />
       </FlexBox>
       <ListBox>
         <List primary>개기조 컴퍼니</List>
@@ -55,6 +56,15 @@ const Title = styled.p`
 const FlexBox = styled.div`
   display: flex;
   gap: 12px;
+  position: relative;
+`;
+
+const Search = styled.img`
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: 8px;
+  right: 12px;
 `;
 
 const InputSelect = styled.select`
@@ -106,7 +116,7 @@ const List = styled.div`
   justify-content: center;
   align-items: center;
 `;
-const Btn = styled.div`
+const Btn = styled.button`
   display: flex;
   justify-content: center;
   bottom: 0;
