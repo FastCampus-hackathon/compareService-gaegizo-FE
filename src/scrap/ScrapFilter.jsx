@@ -11,13 +11,19 @@ const ScrapFilter = () => {
         <Filter>폴더 추가</Filter>
       </LeftFilter>
       <RightFilter>
-        <Filter>입사지원만</Filter>
-
+        <Filter>
+          <Image src="./scrap/checkButton.png" />
+          입사지원만
+          <Image src="./scrap/checkButton.png" />
+          지원한 공고 제외
+          <Image src="./scrap/checkButton.png" />
+          메모 있는 공고만
+        </Filter>
         <Filter>스크랩일순</Filter>
         <Filter>20</Filter>
         <Filter>
           키워드 입력
-          <Image src="./scrap/readingGlasses.png" />
+          <Image src="./scrap/readingGlasses.png" search />
         </Filter>
       </RightFilter>
     </FilterContainer>
@@ -25,15 +31,14 @@ const ScrapFilter = () => {
 };
 
 const FilterContainer = styled.div`
-  border: 1px solid red;
   height: 40px;
   margin-bottom: 13px;
   display: flex;
+  justify-content: space-between;
 `;
 
 const LeftFilter = styled.ul`
   display: flex;
-  margin-right: 51px;
 `;
 
 const RightFilter = styled.ul`
@@ -58,10 +63,11 @@ const Filter = styled.li`
 `;
 
 const Image = styled.img`
-  border: 1px solid red;
   width: 16px;
   height: 16px;
-  margin-left: 41px;
+  margin-right: 6.5px;
+
+  ${(props) => props.search && 'margin-left: 41px;'}
 `;
 
 export default ScrapFilter;
