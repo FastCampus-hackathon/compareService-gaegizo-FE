@@ -23,9 +23,9 @@ const App = () => {
       alert('비교 항목은 최대 3개만 담을 수 있습니다.');
       return;
     }
-
     setCompareList([{id, company, title, tag}, ...compareList]);
   };
+
   useEffect(() => {
     if (isStorage) {
       setShow(false);
