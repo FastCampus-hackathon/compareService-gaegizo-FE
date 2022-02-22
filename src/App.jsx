@@ -9,8 +9,10 @@ const App = () => {
   return (
     <ThemeProvider theme={themeDefault}>
       <GlobalStyles {...themeDefault} />
-      <LeftGNB show={show} setShow={setShow} />
-      <div>next</div>
+      <div style={{display: 'flex'}}>
+        <LeftGNB show={show} setShow={setShow} />
+        <div>next</div>
+      </div>
     </ThemeProvider>
   );
 };
