@@ -11,24 +11,29 @@ const StorageTable = () => {
   return (
     <FlexBox>
       <StorageCard>
-        <Title>이름없는 공고함!</Title>
+        <Title>스타트업 기업 비교함</Title>
         <MemoBar onClick={handleShowMemo}>
           <Img src="./comparepageicons/memotip.png" alt="memo icon" />
-          스크랩한 공고를 한눈에 비교하고, 중요한 관련 정보들을 메모해보세요.
-          ex) 개기조 컴퍼니는 빨간버스로 한번에 감.
+          도전적인 정신과 새로운 가치 추구에 열정을 아끼지 않는 회사를
         </MemoBar>
         <img id="close" src="./comparepageIcons/close.png" alt="close" />
       </StorageCard>
       <StorageCard>
-        <Title>이름없는 공고함!</Title>
+        <Title>연봉이 높은 기업비교</Title>
         <MemoBar>
           <Img src="./comparepageicons/memotip.png" alt="memo icon" />
-          스크랩한 공고를 한눈에 비교하고, 중요한 관련 정보들을 메모해보세요.
-          ex) 개기조 컴퍼니는 빨간버스로 한번에 감.
+          연봉은 기업을 고르는데에 있어서 빼놓을 수 없는 정보이다
         </MemoBar>
         <img id="close" src="./comparepageIcons/close.png" alt="close" />
       </StorageCard>
-      <DefaultCard src="./CompareStorage/default.png" alt="no data" />
+      <StorageCard>
+        <Title>복지 제도로 비교한 부분</Title>
+        <MemoBar>
+          <Img src="./comparepageicons/memotip.png" alt="memo icon" />
+          복지제도가 있어야 장기적으로 회사에 다닐 수 있다
+        </MemoBar>
+        <img id="close" src="./comparepageIcons/close.png" alt="close" />
+      </StorageCard>
       <DefaultCard src="./CompareStorage/default.png" alt="no data" />
       <DefaultCard src="./CompareStorage/default.png" alt="no data" />
       <DefaultCard src="./CompareStorage/default.png" alt="no data" />
