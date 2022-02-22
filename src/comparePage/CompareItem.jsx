@@ -6,24 +6,43 @@ import MainCard from './MainCard';
 import SalaryChart from './SalaryChart';
 import CompareRegion from './CompareRegion';
 
-const CompareItem = () => {
+const CompareItem = ({data, setForView}) => {
+  const {
+    region,
+    salary,
+    title,
+    welfare,
+    workType,
+    sectors,
+    averageSalary,
+    career,
+    companyName,
+    deadline,
+    education,
+    job,
+    preferentialTreatment,
+  } = data;
   return (
     <Col>
       <Row h={246} noborder nopadding>
-        <MainCard />
+        <MainCard
+          setForView={setForView}
+          companyName={companyName}
+          deadline={deadline}
+        />
       </Row>
-      <Row h={72}>경력</Row>
-      <Row h={72}>직무</Row>
+      <Row h={72}>{career}</Row>
+      <Row h={72}>{job}</Row>
       <Row h={208}>
-        <Salary>2600만원</Salary>
-        <SalaryChart />
-        <Desc>UX/UI 디자인 직무에서 신입 평균 연봉이에요</Desc>
+        <Salary>{'면접후 결정' === salary ? salary : salary + '만원'}</Salary>
+        <SalaryChart salary={salary} ave={averageSalary} />
+        <Desc>신입 평균 연봉이에요</Desc>
       </Row>
-      <Row h={72}>업종</Row>
+      <Row h={72}>{sectors}</Row>
       <Row h={102}>
         <CompareRegion />
       </Row>
-      <Row h={72}>근무형태</Row>
+      <Row h={72}>{workType}</Row>
       <Row h={148}>
         <CompareWelfare />
       </Row>

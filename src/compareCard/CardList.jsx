@@ -5,7 +5,7 @@ import ComparePage from '../ComparePage/ComparePage';
 import CardItem from './CardItem';
 import DefaultCard from './DefaultCard';
 
-const CardList = ({list, setIsCompare}) => {
+const CardList = ({list, setIsCompare, setCompareList}) => {
   const handleCompare = async () => {
     const data = await axios.get(
       'http://3.37.36.163:8080/api/compare?jobNumber1=42320380&jobNumber2=42377191&jobNumber3=42349073',
@@ -25,7 +25,9 @@ const CardList = ({list, setIsCompare}) => {
           )}
         <CompareContainer>
           <CompareButton onClick={handleCompare}>공고 비교하기</CompareButton>
-          <ResetButton>비교함 초기화</ResetButton>
+          <ResetButton onClick={() => setCompareList([0, 0, 0])}>
+            비교함 초기화
+          </ResetButton>
         </CompareContainer>
       </CardLists>
     </ListContainer>

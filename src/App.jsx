@@ -38,7 +38,11 @@ const App = () => {
               <ComparePage />
             ) : (
               <>
-                <CardList list={compareList} setIsCompare={setIsCompare} />
+                <CardList
+                  list={compareList}
+                  setIsCompare={setIsCompare}
+                  setCompareList={setCompareList}
+                />
                 <ScarpNav setIsStorage={setIsStorage} />
                 <ScrapFilter />
                 <ScrapList onAddCompare={handleCompareList} />

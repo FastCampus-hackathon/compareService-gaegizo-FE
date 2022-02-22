@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const MainCard = () => {
+const MainCard = ({setForView, companyName, deadline}) => {
   return (
     <AnnounceCard>
       <HitBox>
@@ -9,7 +9,7 @@ const MainCard = () => {
         <Eye src="./comparepageIcons/eye.png" alt="eye" />
         723
       </HitBox>
-      <Title>(주)개기조 컴퍼니</Title>
+      <Title>{companyName}</Title>
       <SubTitle>
         이 세상에 능력 있는 디자이너 및 개발자들 다 우리 회사로 오세요
       </SubTitle>
@@ -18,7 +18,12 @@ const MainCard = () => {
         <Button primary>지원하기</Button>
       </ButtonBox>
       <EndDate>지원마감 22/03/08 23:59</EndDate>
-      <img id="close" src="./comparepageIcons/close.png" alt="close" />
+      <img
+        id="close"
+        src="./comparepageIcons/close.png"
+        alt="close"
+        onClick={() => setForView(true)}
+      />
     </AnnounceCard>
   );
 };
