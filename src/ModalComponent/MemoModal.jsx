@@ -30,7 +30,7 @@ const MemoModal = ({setChangeModal}) => {
       />
       <ButtonContainer>
         <CancelButton onClick={() => setChangeModal(false)}>취소</CancelButton>
-        <SaveButton onClick={handleSaveMemo}>저장</SaveButton>
+        <SaveButton onClick={() => setChangeModal(false)}>저장</SaveButton>
       </ButtonContainer>
       <Close
         src="./scrap/closeButton.png"
@@ -74,7 +74,9 @@ const TextArea = styled.textarea`
   border: 1px solid #d7dce5;
   resize: none;
   margin-bottom: 24px;
-
+  box-shadow: inset 1px 1px 1px 1px #4876ef;
+  -webkit-box-shadow: inset 1px 1px 1px 1px #4876ef;
+  -moz-box-shadow: inset 1px 1px 1px 1px #4876ef;
   &::placeholder {
     color: #96a0b5;
   }

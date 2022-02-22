@@ -14,7 +14,9 @@ const StorageTable = () => {
         <Title>스타트업 기업 비교함</Title>
         <MemoBar onClick={handleShowMemo}>
           <Img src="./comparepageicons/memotip.png" alt="memo icon" />
-          도전적인 정신과 새로운 가치 추구에 열정을 아끼지 않는 회사를
+          <Cut>
+            도전적인 정신과 새로운 가치 추구에 열정을 아끼지 않는 회사를
+          </Cut>
         </MemoBar>
         <img id="close" src="./comparepageIcons/close.png" alt="close" />
       </StorageCard>
@@ -22,7 +24,7 @@ const StorageTable = () => {
         <Title>연봉이 높은 기업비교</Title>
         <MemoBar>
           <Img src="./comparepageicons/memotip.png" alt="memo icon" />
-          연봉은 기업을 고르는데에 있어서 빼놓을 수 없는 정보이다
+          <Cut>연봉은 기업을 고르는데에 있어서 빼놓을 수 없는 정보이다</Cut>
         </MemoBar>
         <img id="close" src="./comparepageIcons/close.png" alt="close" />
       </StorageCard>
@@ -30,7 +32,7 @@ const StorageTable = () => {
         <Title>복지 제도로 비교한 부분</Title>
         <MemoBar>
           <Img src="./comparepageicons/memotip.png" alt="memo icon" />
-          복지제도가 있어야 장기적으로 회사에 다닐 수 있다
+          <Cut>복지제도가 있어야 장기적으로 회사에 다닐 수 있다</Cut>
         </MemoBar>
         <img id="close" src="./comparepageIcons/close.png" alt="close" />
       </StorageCard>
@@ -137,11 +139,16 @@ const MemoBar = styled.div`
   font-size: 14px;
   cursor: pointer;
   border: 1px solid #8491a7;
+  position: absolute;
+  bottom: 28px;
+`;
+
+const Cut = styled.span`
+  width: 200px;
+  font-size: 13px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  position: absolute;
-  bottom: 28px;
 `;
 
 const Img = styled.img`
