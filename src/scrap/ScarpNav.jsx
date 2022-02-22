@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const ScarpNav = () => {
+const ScarpNav = ({setIsStorage}) => {
   return (
     <NavContainer>
       <NavList>
@@ -17,7 +17,7 @@ const ScarpNav = () => {
         </NavItem>
       </NavList>
       <NavList>
-        <NavItem>
+        <NavItem onClick={() => setIsStorage(true)}>
           <Text>저장된 비교함</Text>
           <CountBox>20</CountBox>
         </NavItem>
@@ -42,6 +42,7 @@ const NavList = styled.li`
 
 const NavItem = styled.div`
   display: flex;
+  cursor: pointer;
 `;
 
 const Text = styled.p`

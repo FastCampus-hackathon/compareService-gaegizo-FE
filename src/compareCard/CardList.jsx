@@ -5,8 +5,7 @@ import ComparePage from '../ComparePage/ComparePage';
 import CardItem from './CardItem';
 import DefaultCard from './DefaultCard';
 
-const CardList = ({list}) => {
-  const [current, setCurrent] = useState(false);
+const CardList = ({list, setIsCompare}) => {
   const [empty, setEmpty] = useState(['', '', '']);
 
   const handleCompare = async () => {
@@ -14,28 +13,23 @@ const CardList = ({list}) => {
       'http://3.37.36.163:8080/api/compare?jobNumber1=42320380&jobNumber2=42377191&jobNumber3=42349073',
     );
     console.log(data);
-    setCurrent((current) => !current);
+    setIsCompare((current) => !current);
   };
 
   return (
-    <>
-      <ListContainer>
-        <Title>스크랩/관심기업</Title>
-        <SubTitle>김바쁨님, 스크랩한 공고들을 한눈에 비교해보세요!</SubTitle>
-        <CardLists>
-          {0 < list.length
-            ? list.map((item, index) => (
-                <CardItem cardList={item} key={index} />
-              ))
-            : empty.map((item, index) => <DefaultCard key={index} />)}
-          <CompareContainer>
-            <CompareButton onClick={handleCompare}>공고 비교하기</CompareButton>
-            <ResetButton>비교함 초기화</ResetButton>
-          </CompareContainer>
-        </CardLists>
-      </ListContainer>
-      {current && <ComparePage />}
-    </>
+    <ListContainer>
+      <Title>스크랩/관심기업</Title>
+      <SubTitle>김바쁨님, 스크랩한 공고들을 한눈에 비교해보세요!</SubTitle>
+      <CardLists>
+        {0 < list.length
+          ? list.map((item, index) => <CardItem cardList={item} key={index} />)
+          : empty.map((item, index) => <DefaultCard key={index} />)}
+        <CompareContainer>
+          <CompareButton onClick={handleCompare}>공고 비교하기</CompareButton>
+          <ResetButton>비교함 초기화</ResetButton>
+        </CompareContainer>
+      </CardLists>
+    </ListContainer>
   );
 };
 
