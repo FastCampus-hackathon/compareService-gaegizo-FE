@@ -7,10 +7,9 @@ const colors = {
 };
 const getColor = (bar) => colors[bar.id];
 
-const data = [{company: '평균 연봉', average: 4000}];
-const data1 = [{company: 'A', salary: 3600}];
-
-const SalaryChart = () => {
+const SalaryChart = ({salary, ave}) => {
+  const data = [{company: '평균 연봉', average: Number(ave)}];
+  const data1 = [{company: 'A', salary: Number(salary)}];
   return (
     <ChartBox>
       <ChartDivider>
