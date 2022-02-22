@@ -52,6 +52,9 @@ const Input = styled.input`
   line-height: 20px;
   letter-spacing: -1px;
   padding-left: 16px;
+  box-shadow: inset 0 0 5px #4876ef;
+  -webkit-box-shadow: inset 0 0 5px #4876ef;
+  -moz-box-shadow: inset 0 0 5px #4876ef;
   -moz-appearance: none;
   outline: 0px none transparent;
 `;
