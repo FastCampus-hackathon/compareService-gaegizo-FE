@@ -6,6 +6,7 @@ import {useState} from 'react';
 import CardList from './compareCard/CardList';
 import ScarpNav from './scrap/ScarpNav';
 import ScrapFilter from './scrap/ScrapFilter';
+import ScrapList from './scrap/ScrapList';
 
 const App = () => {
   const [show, setShow] = useState(false);
@@ -19,6 +20,7 @@ const App = () => {
           <CardList />
           <ScarpNav />
           <ScrapFilter />
+          <ScrapList />
         </div>
       </div>
     </ThemeProvider>
