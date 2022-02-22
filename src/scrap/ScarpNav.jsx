@@ -6,8 +6,8 @@ const ScarpNav = () => {
     <NavContainer>
       <NavList>
         <NavItem>
-          <Text>스크랩</Text>
-          <CountBox>20</CountBox>
+          <Text scrap>스크랩</Text>
+          <CountBox scrap>20</CountBox>
         </NavItem>
       </NavList>
       <NavList>
@@ -49,7 +49,9 @@ const Text = styled.p`
   font-size: 20px;
   font-weight: 700;
   margin-right: 8px;
-  color: #373f57;
+  color: #8491a7;
+
+  ${(props) => props.scrap && 'color: #373f57;'}
 `;
 
 const CountBox = styled.div`
@@ -62,7 +64,9 @@ const CountBox = styled.div`
   padding: 0 11px;
   text-align: center;
   color: white;
-  background-color: #373f57;
+  background-color: #8491a7;
+
+  ${(props) => props.scrap && 'background-color: #373f57;'}
 `;
 
 export default ScarpNav;

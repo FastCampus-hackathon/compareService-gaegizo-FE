@@ -6,6 +6,7 @@ import {useState} from 'react';
 import CardList from './compareCard/CardList';
 import ScarpNav from './scrap/ScarpNav';
 import ScrapFilter from './scrap/ScrapFilter';
+import ScrapList from './scrap/ScrapList';
 import ComparePage from './ComparePage/ComparePage';
 
 const App = () => {
@@ -21,6 +22,7 @@ const App = () => {
             <CardList />
             <ScarpNav />
             <ScrapFilter />
+            <ScrapList />
           </div>
         )}
         {!show && <ComparePage />}
