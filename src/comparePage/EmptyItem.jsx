@@ -17,17 +17,18 @@ const EmptyItem = () => {
           <SubTitle>스크랩한 관심공고들을 한눈에 비교해보세요.</SubTitle>
         </EmptyCard>
       </Row>
-      <Row h={68} />
-      <Row h={68} />
-      <Row h={204} />
-      <Row h={68} />
-      <Row h={96} />
-      <Row h={68} />
-      <Row h={150} />
-      <Row h={70} />
-      <Row h={68} />
+      <Row h={72} />
+      <Row h={72} />
+      <Row h={208} />
+      <Row h={72} />
       <Row h={102} />
-      <Row h={236} />
+      <Row h={72} />
+      <Row h={148} />
+      <Row h={102} />
+      <Row h={72} />
+      <Row h={102} />
+      <Row h={464} />
+      <Row h={72} />
     </Col>
   );
 };
