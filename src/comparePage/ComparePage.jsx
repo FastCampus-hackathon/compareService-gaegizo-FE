@@ -6,13 +6,10 @@ import ModalContainer from '../ModalComponent/ModalContainer';
 import SaveCompares from '../ModalComponent/SaveCompares';
 import CompareBox from './CompareBox';
 
-const ComparePage = ({list}) => {
+const ComparePage = () => {
   const [changeModal, setChangeModal] = useState(false);
   const [memoModal, setMemoModal] = useState(false);
   const [saveCompareModal, setSaveCompareModal] = useState(false);
-
-  // 비교한 데이터 가져옴
-  console.log(list);
 
   return (
     <Container>
