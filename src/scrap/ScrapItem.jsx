@@ -2,9 +2,27 @@ import React from 'react';
 import styled from 'styled-components';
 import ScrapBottom from './ScrapBottom';
 
-const ScrapItem = ({list}) => {
-  const {companyName, title, career, education, workType, region, deadline} =
-    list;
+const ScrapItem = ({list, onAddCompare}) => {
+  const {
+    jobNumber,
+    companyName,
+    title,
+    career,
+    education,
+    workType,
+    region,
+    deadline,
+  } = list;
+
+  const handleAddCompare = () => {
+    onAddCompare({
+      id: jobNumber,
+      company: companyName,
+      title,
+      tag: [career, region],
+    });
+  };
+
   return (
     <ItemContainer>
       <InfoContainer>
@@ -20,7 +38,9 @@ const ScrapItem = ({list}) => {
           </TagList>
         </CompanyInfo>
         <ButtonContainer>
-          <CompareButton>비교함에 추가</CompareButton>
+          <CompareButton onClick={handleAddCompare}>
+            비교함에 추가
+          </CompareButton>
           <ApplyButton>입사지원</ApplyButton>
           <DeadLine>{deadline}</DeadLine>
         </ButtonContainer>
