@@ -21,7 +21,7 @@ const CompareSotrage = () => {
         <NavList>
           <NavItem>
             <Text scrap>저장된 비교함</Text>
-            <CountBox scrap>20</CountBox>
+            <CountBox scrap>3</CountBox>
           </NavItem>
         </NavList>
       </NavContainer>
