@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import ModalContainer from '../ModalComponent/ModalContainer';
 import CompareBox from './CompareBox';
 
 const ComparePage = () => {
@@ -14,6 +15,9 @@ const ComparePage = () => {
         <CompareBtn>비교함 저장하기</CompareBtn>
       </ToolBar>
       <CompareBox />
+      <ModalContainer>
+        <div>sdfsf</div>
+      </ModalContainer>
     </Container>
   );
 };
@@ -47,6 +51,7 @@ const MemoBar = styled.div`
   display: flex;
   align-items: center;
   font-size: 14px;
+  cursor: pointer;
 `;
 
 const Img = styled.img`

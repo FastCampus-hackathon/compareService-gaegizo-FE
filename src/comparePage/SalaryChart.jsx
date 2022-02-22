@@ -21,6 +21,7 @@ const SalaryChart = () => {
           enableLabel={false}
           axisBottom={null}
           axisLeft={null}
+          isInteractive={false}
           margin={{left: 40, right: 40}}
           keys={['salary', 'average']}
           colors={getColor}
@@ -35,6 +36,7 @@ const SalaryChart = () => {
           enableLabel={false}
           axisBottom={null}
           axisLeft={null}
+          isInteractive={false}
           margin={{left: 40, right: 40}}
           keys={['salary', 'average']}
           colors={getColor}
