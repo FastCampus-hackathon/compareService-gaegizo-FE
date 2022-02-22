@@ -72,11 +72,12 @@ const CheckBox = styled.div`
 `;
 
 const Company = styled.p`
+  width: 150px;
   height: 22px;
   line-height: 22px;
   font-size: 15px;
   font-weight: 400;
-  margin-right: 91px;
+  /* margin-right: 91px; */
 `;
 
 const CompanyInfo = styled.div`
