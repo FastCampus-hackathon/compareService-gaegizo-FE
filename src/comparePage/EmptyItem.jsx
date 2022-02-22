@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 
-const EmptyItem = () => {
+const EmptyItem = ({setChangeModal}) => {
   return (
     <Col>
       <Row h={246} noborder nopadding>
-        <EmptyCard>
+        <EmptyCard onClick={() => setChangeModal(true)}>
           <Title>
             <img
               src="./comparepageIcons/plus.png"

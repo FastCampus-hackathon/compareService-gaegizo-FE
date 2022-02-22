@@ -10,14 +10,14 @@ const ComparePage = () => {
     <Container>
       <Title>공고 비교하기</Title>
       <ToolBar>
-        <MemoBar onClick={() => setChangeModal(true)}>
+        <MemoBar>
           <Img src="./comparepageicons/memotip.png" alt="memo icon" />
           스크랩한 공고를 한눈에 비교하고, 중요한 관련 정보들을 메모해보세요.
           ex) 개기조 컴퍼니는 빨간버스로 한번에 감.
         </MemoBar>
         <CompareBtn>비교함 저장하기</CompareBtn>
       </ToolBar>
-      <CompareBox />
+      <CompareBox setChangeModal={setChangeModal} />
       {changeModal && (
         <ModalContainer>
           <ChangeModal setChangeModal={setChangeModal} />

@@ -3,13 +3,13 @@ import CompareHeader from './CompareHeader';
 import CompareItem from './CompareItem';
 import EmptyItem from './EmptyItem';
 
-const CompareBox = () => {
+const CompareBox = ({setChangeModal}) => {
   return (
     <Box>
       <CompareHeader />
       <CompareItem />
       <CompareItem />
-      <EmptyItem />
+      <EmptyItem setChangeModal={setChangeModal} />
     </Box>
   );
 };

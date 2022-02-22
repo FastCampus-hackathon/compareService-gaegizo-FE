@@ -113,6 +113,7 @@ const StatisticsBtn = styled.div`
   height: 26px;
   border: 1px solid #afbac8;
   border-radius: 4px;
+  line-height: 1.6;
   text-align: center;
   cursor: pointer;
 `;

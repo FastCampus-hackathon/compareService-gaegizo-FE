@@ -11,6 +11,19 @@ const ChangeModal = ({setChangeModal}) => {
         </InputSelect>
         <Input placeholder="키워드 입력" />
       </FlexBox>
+      <ListBox>
+        <List primary>개기조 컴퍼니</List>
+        <List primary>(주)매일매일확인</List>
+        <List>신한</List>
+        <List>안잡아먹는 중소기업</List>
+        <List>젤리젤리</List>
+        <List>취업 잘 되는 회사</List>
+        <List>그냥 회사</List>
+      </ListBox>
+      <BtnBox>
+        <Btn>취소</Btn>
+        <Btn primary>비교하기</Btn>
+      </BtnBox>
       <Close
         src="./scrap/closeButton.png"
         alt="close"
@@ -71,6 +84,51 @@ const Close = styled.img`
   top: 20px;
   right: 18px;
   cursor: pointer;
+`;
+const ListBox = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 32px;
+`;
+const List = styled.div`
+  height: 36px;
+  padding: 0 12px;
+  background: ${({primary}) => (primary ? '#4876ef' : '#fff')};
+  border-radius: 12px;
+  border: ${({primary}) => (primary ? 'none' : '1px solid #AFBAC8')};
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 22px;
+  letter-spacing: -1px;
+  color: ${({primary}) => (primary ? '#fff' : '#5C667B')};
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+const Btn = styled.div`
+  display: flex;
+  justify-content: center;
+  bottom: 0;
+  background: ${({primary}) => (primary ? '#4876ef' : '#fff')};
+  border: ${({primary}) => (primary ? 'none' : '1px solid #AFBAC8')};
+  color: ${({primary}) => (primary ? '#fff' : '#5C667B')};
+  font-size: 16px;
+  line-height: 2.4;
+  text-align: center;
+  border-radius: 4px;
+  letter-spacing: -1px;
+  width: 120px;
+  height: 40px;
+`;
+
+const BtnBox = styled.div`
+  width: calc(100% - 80px);
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: 38px;
+  gap: 8px;
 `;
 
 export default ChangeModal;
