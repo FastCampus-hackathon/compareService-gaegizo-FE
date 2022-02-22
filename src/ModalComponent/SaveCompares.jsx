@@ -52,6 +52,8 @@ const Input = styled.input`
   line-height: 20px;
   letter-spacing: -1px;
   padding-left: 16px;
+  -moz-appearance: none;
+  outline: 0px none transparent;
 `;
 
 const Btn = styled.button`

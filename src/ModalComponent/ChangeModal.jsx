@@ -95,6 +95,8 @@ const Input = styled.input`
   box-sizing: border-box;
   border-radius: 4px;
   padding-left: 12px;
+  -moz-appearance: none;
+  outline: 0px none transparent;
 `;
 const Close = styled.img`
   width: 24px;
