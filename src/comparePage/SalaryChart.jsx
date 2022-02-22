@@ -8,8 +8,14 @@ const colors = {
 const getColor = (bar) => colors[bar.id];
 
 const SalaryChart = ({salary, ave}) => {
+  let dumi;
+  if ('면접후 결정' === salary) {
+    dumi = 4600;
+  } else {
+    dumi = salary;
+  }
   const data = [{company: '평균 연봉', average: Number(ave)}];
-  const data1 = [{company: 'A', salary: Number(salary)}];
+  const data1 = [{company: 'A', salary: Number(dumi)}];
   return (
     <ChartBox>
       <ChartDivider>
