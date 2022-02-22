@@ -1,3 +1,5 @@
+import axios from 'axios';
+import {useEffect, useState} from 'react';
 import styled from 'styled-components';
 import CompareHeader from './CompareHeader';
 import CompareItem from './CompareItem';

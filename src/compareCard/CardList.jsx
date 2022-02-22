@@ -10,7 +10,6 @@ const CardList = ({list, setIsCompare}) => {
     const data = await axios.get(
       'http://3.37.36.163:8080/api/compare?jobNumber1=42320380&jobNumber2=42377191&jobNumber3=42349073',
     );
-    console.log(data);
     setIsCompare((current) => !current);
   };
 
