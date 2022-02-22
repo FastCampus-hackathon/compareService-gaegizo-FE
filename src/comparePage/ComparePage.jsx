@@ -1,6 +1,6 @@
 import {useState} from 'react';
 import styled from 'styled-components';
-import ChangeModal from '../ModalComponent/ChangeModal';
+import MemoModal from '../ModalComponent/MemoModal';
 import ModalContainer from '../ModalComponent/ModalContainer';
 import SaveCompares from '../ModalComponent/SaveCompares';
 import CompareBox from './CompareBox';
@@ -24,7 +24,7 @@ const ComparePage = () => {
       <CompareBox setChangeModal={setChangeModal} />
       {changeModal && (
         <ModalContainer>
-          <ChangeModal setChangeModal={setChangeModal} />
+          <MemoModal setChangeModal={setChangeModal} />
         </ModalContainer>
       )}
       {saveCompareModal && (

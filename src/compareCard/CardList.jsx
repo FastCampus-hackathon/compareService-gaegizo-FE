@@ -1,3 +1,4 @@
+import axios from 'axios';
 import {useState} from 'react';
 import styled from 'styled-components';
 import CardItem from './CardItem';
@@ -6,7 +7,14 @@ import DefaultCard from './DefaultCard';
 const CardList = ({list}) => {
   const [empty, setEmpty] = useState(['', '', '']);
 
-  const handleCompare = () => {};
+  const handleCompare = async () => {
+    const data = await axios.get('api/announcement', {
+      jobNumber1: '42320380',
+      jobNumber2: '42377191',
+      jobNumber3: '42349073',
+    });
+    console.log(data);
+  };
 
   return (
     <ListContainer>
